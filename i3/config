@@ -1,0 +1,430 @@
+#######################
+# config starts here: #
+######################
+exec picom
+exec pacmd set-default-sink 2
+
+set $baseFolder "~/Documentos/Desarrollo/Personal/dotfiles-Mauro/i3"
+
+font pango: JetBrains Mono NL Regular 10
+set $mod Mod4
+
+#####################
+# workspace layout: #
+#####################
+
+# default i3 tiling mode:
+workspace_layout default
+
+##############################
+# extra options for windows: #
+##############################
+
+#border indicator on windows:
+new_window pixel 2
+
+# Set inner/outer gaps
+gaps inner 1
+gaps outer 0
+smart_gaps on
+smart_borders on
+
+# show window title bars (not officially supported with i3gaps)
+#default_border pixel 1
+for_window [class="^.*"] border pixel 2
+
+##########################################
+# configuration for workspace behaviour: #
+##########################################
+
+# Define names for default workspaces for which we configure key bindings later on.
+# We use variables to avoid repeating the names in multiple places.
+set $ws1 "1"
+set $ws2 "2"
+set $ws3 "3"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
+set $ws9 "9"
+set $ws10 "10"
+
+# window title alignment
+#title_align center
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# switch to workspace with numpad keys
+bindcode $mod+87 workspace 1
+bindcode $mod+88 workspace 2
+bindcode $mod+89 workspace 3
+bindcode $mod+83 workspace 4
+bindcode $mod+84 workspace 5
+bindcode $mod+85 workspace 6
+bindcode $mod+79 workspace 7
+bindcode $mod+80 workspace 8
+bindcode $mod+81 workspace 9
+bindcode $mod+90 workspace 10
+
+# switch to workspace with numlock numpad keys
+bindcode $mod+Mod2+87 workspace $ws1
+bindcode $mod+Mod2+88 workspace $ws2
+bindcode $mod+Mod2+89 workspace $ws3
+bindcode $mod+Mod2+83 workspace $ws4
+bindcode $mod+Mod2+84 workspace $ws5
+bindcode $mod+Mod2+85 workspace $ws6
+bindcode $mod+Mod2+79 workspace $ws7
+bindcode $mod+Mod2+80 workspace $ws8
+bindcode $mod+Mod2+81 workspace $ws9
+bindcode $mod+Mod2+90 workspace $ws10
+
+# move focused container to workspace with numpad keys
+bindcode $mod+Shift+Mod2+87	move container to workspace  $ws1
+bindcode $mod+Shift+Mod2+88	move container to workspace  $ws2
+bindcode $mod+Shift+Mod2+89	move container to workspace  $ws3
+bindcode $mod+Shift+Mod2+83	move container to workspace  $ws4
+bindcode $mod+Shift+Mod2+84	move container to workspace  $ws5
+bindcode $mod+Shift+Mod2+85	move container to workspace  $ws6
+bindcode $mod+Shift+Mod2+79	move container to workspace  $ws7
+bindcode $mod+Shift+Mod2+80	move container to workspace  $ws8
+bindcode $mod+Shift+Mod2+81	move container to workspace  $ws9
+bindcode $mod+Shift+Mod2+90	move container to workspace  $ws10
+
+# move focused container to workspace with numpad keys
+bindcode $mod+Shift+87 	 move container to workspace  $ws1
+bindcode $mod+Shift+88 	 move container to workspace  $ws2
+bindcode $mod+Shift+89 	 move container to workspace  $ws3
+bindcode $mod+Shift+83 	 move container to workspace  $ws4
+bindcode $mod+Shift+84 	 move container to workspace  $ws5
+bindcode $mod+Shift+85 	 move container to workspace  $ws6
+bindcode $mod+Shift+79 	 move container to workspace  $ws7
+bindcode $mod+Shift+80 	 move container to workspace  $ws8
+bindcode $mod+Shift+81 	 move container to workspace  $ws9
+bindcode $mod+Shift+90 	 move container to workspace  $ws10
+
+#ShortCuts
+
+bindsym $mod+1 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 1
+bindsym $mod+2 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 2
+bindsym $mod+3 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 3
+bindsym $mod+4 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 4
+bindsym $mod+5 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 5
+bindsym $mod+6 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 6
+bindsym $mod+7 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 7
+bindsym $mod+8 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 8
+bindsym $mod+9 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 9
+bindsym $mod+0 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh 0
+
+bindsym $mod+Shift+1 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S1
+bindsym $mod+Shift+2 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S2
+bindsym $mod+Shift+3 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S3
+bindsym $mod+Shift+4 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S4
+bindsym $mod+Shift+5 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S5
+bindsym $mod+Shift+6 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S6
+bindsym $mod+Shift+7 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S7
+bindsym $mod+Shift+8 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S8
+bindsym $mod+Shift+9 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S9
+bindsym $mod+Shift+0 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S0
+
+#bindsym $mod+. exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh "."
+#bindsym $mod+, exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh ","
+#bindsym $mod+ñ exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh ñ
+bindsym $mod+p exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh p
+bindsym $mod+y exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh y
+bindsym $mod+f exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh f
+bindsym $mod+g exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh g
+bindsym $mod+c exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh c
+bindsym $mod+h exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh h
+bindsym $mod+l exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh l
+
+#bindsym $mod+Shift+. exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S.
+#bindsym $mod+Shift+, exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S,
+bindsym $mod+Shift+ñ exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sñ
+bindsym $mod+Shift+p exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sp
+bindsym $mod+Shift+y exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sy
+bindsym $mod+Shift+f exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sf
+bindsym $mod+Shift+g exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sg
+#bindsym $mod+Shift+c exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sc
+bindsym $mod+Shift+h exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sh
+bindsym $mod+Shift+l exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sl
+
+bindsym $mod+a exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh a
+bindsym $mod+o exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh o
+bindsym $mod+e exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh e
+bindsym $mod+u exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh u
+bindsym $mod+i exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh i
+bindsym $mod+d exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh d
+bindsym $mod+r exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh r
+bindsym $mod+t exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh t
+bindsym $mod+n exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh n
+bindsym $mod+s exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh s
+
+bindsym $mod+Shift+a exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sa
+bindsym $mod+Shift+o exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh So
+bindsym $mod+Shift+e exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Se
+bindsym $mod+Shift+u exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Su
+bindsym $mod+Shift+i exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Si
+bindsym $mod+Shift+d exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sd
+bindsym $mod+Shift+r exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sr
+bindsym $mod+Shift+t exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh St
+bindsym $mod+Shift+n exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sn
+bindsym $mod+Shift+s exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Ss 
+
+bindsym $mod+- exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh "-"
+bindsym $mod+q exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh q
+bindsym $mod+j exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh j
+bindsym $mod+k exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh k
+bindsym $mod+x exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh x
+bindsym $mod+b exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh b
+bindsym $mod+m exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh m
+bindsym $mod+w exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh w
+bindsym $mod+v exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh v
+bindsym $mod+z exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh z
+
+bindsym $mod+Shift+- exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh "S-"
+bindsym $mod+Shift+q exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sq
+bindsym $mod+Shift+j exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sj
+bindsym $mod+Shift+k exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sk
+bindsym $mod+Shift+x exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sx
+bindsym $mod+Shift+b exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sb
+bindsym $mod+Shift+m exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sm
+bindsym $mod+Shift+w exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sw
+bindsym $mod+Shift+v exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sv
+bindsym $mod+Shift+z exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sz
+
+
+# resize window (you can also use the mouse for that)
+mode "resize" {
+        # These bindings trigger as soon as you enter the resize mode
+
+        # Pressing left will shrink the window’s width.
+        # Pressing right will grow the window’s width.
+        # Pressing up will shrink the window’s height.
+        # Pressing down will grow the window’s height.
+        bindsym j resize shrink width 1 px or 1 ppt
+        bindsym k resize grow height 1 px or 1 ppt
+        bindsym l resize shrink height 1 px or 1 ppt
+        bindsym semicolon resize grow width 1 px or 1 ppt
+
+        # same bindings, but for the arrow keys
+        bindsym Left resize shrink width 1 px or 1 ppt
+        bindsym Down resize grow height 1 px or 1 ppt
+        bindsym Up resize shrink height 1 px or 1 ppt
+        bindsym Right resize grow width 1 px or 1 ppt
+
+        # back to normal: Enter or Escape or $mod+r
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+        bindsym $mod+r mode "default"
+}
+
+#bindsym $mod+r mode "resize"
+
+######################################
+# keybindings for different actions: #
+######################################
+
+# start a terminal
+bindsym $mod+Return exec kitty
+
+# Backlight control
+
+bindsym XF86MonBrightnessUp exec brightnessctl set $(~/.config/dotfiles/i3/scripts/brightnessUP.sh) && killall dunst &&  ~/.config/dotfiles/i3/scripts/brightnessNotify.sh
+bindsym XF86MonBrightnessDown exec brightnessctl set $(~/.config/dotfiles/i3/scripts/brightnessDown.sh) && killall dunst && ~/.config/dotfiles/i3/scripts/brightnessNotify.sh
+
+# enter fullscreen mode for the focused container
+#bindsym $mod+f fullscreen toggle
+
+
+# change container layout (stacked, tabbed, toggle split)
+bindsym Print exec flameshot gui 
+#bindsym $mod+g layout tabbed
+#bindsym $mod+e layout toggle split
+
+# toggle tiling / floating
+bindsym  $mod+Shift+space floating toggle
+
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle
+
+# Multimedia Keys
+
+# volume
+bindsym XF86AudioRaiseVolume exec amixer -D pulse sset Master 5%+ && pkill -RTMIN+1 i3blocks
+bindsym XF86AudioLowerVolume exec amixer -D pulse sset Master 5%- && pkill -RTMIN+1 i3blocks
+
+# gradular volume control
+bindsym $mod+XF86AudioRaiseVolume exec amixer -D pulse sset Master 1%+ && pkill -RTMIN+1 i3blocks
+bindsym $mod+XF86AudioLowerVolume exec amixer -D pulse sset Master 1%- && pkill -RTMIN+1 i3blocks
+
+# mute
+bindsym XF86AudioMute exec amixer sset Master toggle && killall -USR1 i3blocks
+
+# audio control
+bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPause exec playerctl pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# Redirect sound to headphones
+#bindsym $mod+q exec /usr/local/bin/switch-audio-port
+
+
+
+# Power Profiles menu switcher (rofi)
+#bindsym $mod+Shift+p exec ~/.config/dotfiles/i3/scripts/power-profiles
+
+
+# use workspaces on different displays:
+# where you have to replace VGA-0/HDMI-0 with the names for your displays
+# you can get from xrandr command
+#workspace $ws1 output eDP
+#workspace $ws2 output eDP
+#workspace $ws3 output eDP
+#workspace $ws4 output eDP
+#workspace $ws5 output eDP
+workspace $ws1 output eDP
+workspace $ws2 output HDMI-A-0
+workspace $ws3 output eDP
+workspace $ws4 output eDP
+workspace $ws5 output HDMI-A-0
+workspace $ws6 output HDMI-A-0
+workspace $ws7 output HDMI-A-0
+workspace $ws8 output eDP
+workspace $ws9 output eDP
+workspace $ws10 output eDP
+
+# bind program to workspace and focus to them on startup:
+assign [class="Xfce4-terminal"] $ws1
+assign [class="Alacritty"] $ws1
+assign [class="Google-chrome"] $ws2
+assign [class="Postman"] $ws2
+assign [class="Code"] $ws3
+assign [class="code-oss"] $ws3
+assign [class="qBittorrent"] $ws9
+assign [class="Spotify"] $ws10
+# automatic set focus new window if it opens on another workspace then the current:
+for_window [class=Xfce4-terminal] focus
+for_window [class=Alacritty] focus
+for_window [class=Google-chrome] focus
+for_window [class=Thunar] focus
+for_window [class=Brave-browser] focus
+for_window [class=Code] focus
+for_window [class=vlc] focus
+
+
+#############################################
+# autostart applications/services on login: #
+#############################################
+
+exec --no-startup-id dex --autostart --environment i3
+ 
+# set powersavings for display:
+exec --no-startup-id xset s 480 dpms 600 600 600
+
+
+##################
+# floating rules #
+##################
+
+# set size of floating window
+#for_window [window_role="(?i)GtkFileChooserDialog"] resize set 640 480 #to set size of file choose dialog
+#for_window [class=".*"] resize set 640 480 #to change size of all floating windows 
+
+# set position of floating window
+for_window [class=".*"] move position center
+
+######################################
+# color settings for bar and windows #
+######################################
+
+# Define colors variables:
+set $background	        #0d1017
+set $indicator          #e6b450
+set $child_border       #565b66
+set $darkblue		#08052b
+set $lightblue		#5294e2
+set $urgentred		#e53935
+set $white		#ffffff
+set $black		#000000
+set $purple		#e345ff
+set $darkgrey		#383c4a
+set $grey               #878787	
+set $mediumgrey		#8b8b8b
+set $yellowbrown	#e1b700
+set $cyan               #00dede
+set $warm               #ebdbb2
+set $gruvDrk            #0d1017
+
+# define colors for windows
+#class		            	border		bground		text		indicator	child_border
+client.focused		    	$white	        $background	$white		$indicator   	$child_border
+client.unfocused	    	$darkgrey	$darkgrey	$darkgrey	$darkgrey	$black
+client.focused_inactive		$gruvDrk	$gruvDrk	$gruvDrk	$gruvDrk	$gruvDrk
+client.urgent		    	$urgentred	$urgentred	$white		$yellowbrown	$yellowbrown
+
+
+# Application menu handled by rofi: #
+#####################################
+#bindsym $mod+d exec ~/.config/polybar/forest/scripts/launcher.sh
+#bindsym $mod+e exec rofi -modi emoji -show emoji -theme ~/.config/dotfiles/polybar/forest/scripts/rofi/emoji.rasi
+#bindsym $mod+c exec rofi -modi "clipboard:greenclip print" -show clipboard -run-command '{cmd}' -theme ~/.config/dotfiles/polybar/forest/scripts/rofi/clipboard.rasi 
+bindsym $mod+Control+e exec ~/.config/dotfiles/polybar/forest/scripts/powermenu.sh
+
+# Polybar 
+exec_always ~/.config/dotfiles/polybar/launch.sh
+
+#copy config files to mega 
+#exec rclone copy ~/.config/ rozanpoudelMEGA:/dotfiles --include "{i3/**,dunst/**,fish/**,lvim/**,rofi/**,picom.conf,polybar/**,alacritty/**, nvim/**}" 
+#exec rclone copy ~/Pictures/ roshanpaudel003MEGA:/Pictures 
+#exec rclone copy ~/Documents/ rozanpoudelMEGA:/Documents
+
+# Definir la configuración de los espacios de trabajo
+exec_always --no-startup-id ~/.config/i3/updaters/workspaces.sh
+
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+
+exec --no-startup-id nm-applet
+
+# Use pactl to adjust volume in PulseAudio.
+set $refresh_i3status killall -SIGUSR1 i3status
+#bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +2% && $refresh_i3status
+#bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -2% && $refresh_i3status
+#Sbindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
+bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
+
+# Use Mouse+$mod to drag floating windows to their wanted position
+floating_modifier $mod
+
+# alternatively, you can use the cursor keys:
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+# move focused window
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+bindsym $mod+Shift+Left move left
+
+# change container layout (stacked, tabbed, toggle split)
+#bindsym $mod+Shift+s layout stacking
+#bindsym $mod+o layout tabbed
+#bindsym $mod+e layout toggle split
+
+
+# focus the child container
+#bindsym $mod+d focus child
+
+exec --no-startup-id spotify
+
+exec feh --bg-fill /home/mauro/Documentos/Wallpapers/47.jpg
+
+exec stop_all_dockers
+
+#exec ~/.config/i3/scripts/keymap.sh
+
+exec  --no-startup-id /home/mauro/.config/dotfiles/i3/startup.sh
