@@ -283,5 +283,284 @@ if echo "$lsusb_output" | grep -q "03a8:a649"; then
             ;;
     esac
 else
-    echo "El dispositivo OLKB Preonic no está conectado."
+    case $1 in
+        "1")
+            i3-dmenu-desktop
+            ;;
+        "2")
+            rofi -show drun -show-icons
+            ;;
+        "3")
+            i3-nagbar -t warning -m 'irse? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'
+            ;;
+        "4")
+            nautilus
+            ;;
+        "5")
+            gnome-control-center
+            ;;
+        "6")
+            ;;
+        "7")
+            /home/mauro/.config/dotfiles/polybar/forest/scripts/powermenu.sh
+            ;;
+        "9")
+            i3-msg workspace prev
+            ;;
+        "0")
+            i3-msg workspace next
+            ;;
+        ".")
+            ;;
+        ",")
+            ;;
+        "ñ")
+            ;;
+        "p")
+            i3-msg workspace 10
+            ;;
+        "y")
+            ;;
+        "f")
+            i3-msg workspace 4
+            ;;
+        "g")
+            i3-msg workspace 5
+            ;;
+        "c")
+            ;;
+        "h")
+            i3-msg workspace 6
+            
+            ;;
+        "l")
+            i3-msg workspace 9
+            ;;
+        "a")
+            i3-msg workspace 1
+            ;;
+        "o")
+            i3lock -c 000000
+            ;;
+        "e")
+            ;;
+        "u")
+            ;;
+        "i")
+            ;;
+        d)
+            i3-msg workspace 3
+            ;;
+        "r") 
+            notify-send -i /usr/share/icons/Win11-blue-dark/status/22/yum-indicator-info.svg "reload"
+            i3-msg reload
+            ;;
+        "t")
+            i3-msg mode resize
+            ;;
+        "n")
+            ;;
+        "s")
+            i3-msg workspace 2
+            ;;  
+        "-") 
+            ;;
+        "q")
+            i3-msg kill
+            ;;
+        "j")
+            i3-msg workspace 7
+            ;;
+        "k")
+            i3-msg workspace 8
+            ;;
+        "x")
+            ;;
+        "b")
+            i3-msg split h
+            ;;
+        "m")
+            i3-msg split v
+            ;;
+        "w")
+            ;;
+        "v")
+            ;;
+        "z")
+            i3-msg focus parent
+            ;;
+        "S1")
+            ;;
+        "S2")
+            ;;
+        "S3")
+            ;;
+        "S4")
+            ;;
+        "S5")
+            ;;
+        "S6")
+            ;;
+        "S7")
+            ;;
+        "S8")
+            ;;
+        "S9")
+            ;;
+        "S0")
+            ;;
+        "S.")
+            ;;
+        "S,")
+            ;;
+        "Sñ")
+            ;;
+        "Sp")
+            i3-msg move window to workspace 10  
+            ;;
+        "Sy")
+            ;;
+        "Sf")
+            i3-msg move window to workspace 4  
+            ;;
+        "Sg")
+            i3-msg move window to workspace 5  
+            ;;
+        "Sc")
+            ;;
+        "Sh")
+            i3-msg move window to workspace 6  
+            ;;
+        "Sl")
+            i3-msg move window to workspace 9  
+            ;;
+        "Sa")
+            i3-msg move window to workspace 1  
+            ;;
+        "So")
+            ;;
+        "Se")
+            ;;
+        "Su")
+            ;;
+        "Si")
+            ;;
+        "Sd")
+            i3-msg move window to workspace 3  
+            ;;
+        "Sr")
+            notify-send -i /usr/share/icons/Win11-blue-dark/status/22/yum-indicator-info.svg "restart"
+            i3-msg restart  
+            ;;
+        "St")
+            ;;
+        "Sn")
+            ;;
+        "Ss")
+            i3-msg move window to workspace 2  
+            ;;
+        "S-")
+            ;;
+        "Sq")
+            ;;
+        "Sj")
+            i3-msg move window to workspace 7 
+            ;;
+        "Sk")
+            i3-msg move window to workspace 8  
+            ;;
+        "Sx")
+            ;;
+        "Sb")
+            ;;
+        "Sm")
+            ;;
+        "Sw")
+            ;;
+        "Sv")
+            ;;
+        "Sz")
+            ;;
+        "C1")
+            ;;
+        "C2")
+            ;;
+        "C3")
+            ;;
+        "C4")
+            ;;
+        "C5")
+            ;;
+        "C6")
+            ;;
+        "C7")
+            ;;
+        "C8")
+            ;;
+        "C9")
+            ;;
+        "C0")
+            ;;
+        "C.")
+            ;;
+        "C,")
+            ;;
+        "Cñ")
+            ;;
+        "Cp")
+            ;;
+        "Cy")
+            ;;
+        "Cf")
+            ;;
+        "Cg")
+            ;;
+        "Cc")
+            ;;
+        "Cl")
+            ;;
+        "Ca")
+            ;;
+        "Co")
+            ;;
+        "Ce")
+            ;;
+        "Cu")
+            ;;
+        "Ci")
+            ;;
+        "Cd")
+            ;;
+        "Cr")
+            ;;
+        "Ct")
+            ;;
+        "Cn")
+            ;;
+        "Cs")
+            ;;
+        "C-")
+            ;;
+        "Cq")
+            ;;
+        "Cj")
+            ;;
+        "Ck")
+            ;;
+        "Cx")
+            ;;
+        "Cb")
+            ;;
+        "Cm")
+            ;;
+        "Cw")
+            ;;
+        "Cv")
+            ;;
+        "Cz")
+            ;;
+        *)
+            echo "default"
+            ;;
+    esac
 fi
