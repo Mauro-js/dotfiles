@@ -8,6 +8,8 @@ set $baseFolder "~/Documentos/Desarrollo/Personal/dotfiles-Mauro/i3"
 
 font pango: JetBrains Mono NL Regular 10
 set $mod Mod4
+#exec --no-startup-id pactl load-module module-bluetooth-policy
+#exec --no-startup-id pactl load-module module-bluetooth-discover
 
 #####################
 # workspace layout: #
@@ -128,9 +130,9 @@ bindsym $mod+Shift+8 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S8
 bindsym $mod+Shift+9 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S9
 bindsym $mod+Shift+0 exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S0
 
-#bindsym $mod+. exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh "."
-#bindsym $mod+, exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh ","
-#bindsym $mod+ñ exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh ñ
+
+
+
 bindsym $mod+p exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh p
 bindsym $mod+y exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh y
 bindsym $mod+f exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh f
@@ -141,7 +143,7 @@ bindsym $mod+l exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh l
 
 #bindsym $mod+Shift+. exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S.
 #bindsym $mod+Shift+, exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh S,
-bindsym $mod+Shift+ñ exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sñ
+
 bindsym $mod+Shift+p exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sp
 bindsym $mod+Shift+y exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sy
 bindsym $mod+Shift+f exec /home/mauro/.config/dotfiles/i3/scripts/shortCut.sh Sf
@@ -319,7 +321,7 @@ for_window [class=vlc] focus
 # autostart applications/services on login: #
 #############################################
 
-exec --no-startup-id dex --autostart --environment i3
+#exec --no-startup-id dex --autostart --environment i3
  
 # set powersavings for display:
 exec --no-startup-id xset s 480 dpms 600 600 600
@@ -384,9 +386,9 @@ exec_always ~/.config/dotfiles/polybar/launch.sh
 # Definir la configuración de los espacios de trabajo
 exec_always --no-startup-id ~/.config/i3/updaters/workspaces.sh
 
-exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
+#exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 
-exec --no-startup-id nm-applet
+#exec --no-startup-id nm-applet
 
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status

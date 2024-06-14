@@ -43,9 +43,9 @@ font-1 = "FontAwesome:size=20;20"
 font-2 = "JetBrainsMono Nerd Font:size=8;2"
 font-3 = "JetBrainsMono Nerd Font:size=8;2"
 
-modules-left = xwindow
+modules-left = i3 spotify spotify-prev spotify-play-pause spotify-next headphones
 modules-center = date
-modules-right =  battery xkeyboard pulseaudio powermenu
+modules-right =  docker temperature cpu memory vpn battery xkeyboard pulseaudio powermenu
 
 tray-position = right
 tray-padding = 0
@@ -97,9 +97,9 @@ font-1 = "FontAwesome:size=20;20"
 font-2 = "JetBrainsMono Nerd Font:size=8;2"
 font-3 = "JetBrainsMono Nerd Font:size=8;2"
 
-modules-left = i3 cava
-modules-center =  spotify spotify-prev spotify-play-pause spotify-next headphones
-modules-right = docker temperature cpu memory vpn
+modules-left = i3 
+modules-center =  
+modules-right =  
 
 ;tray-position = center
 ;tray-padding = 2
@@ -152,7 +152,7 @@ font-3 = "JetBrainsMono Nerd Font:size=8;2"
 
 modules-left = xwindow
 modules-center = date
-modules-right = cava spotify spotify-prev spotify-play-pause spotify-next pulseaudio
+modules-right = cava i3 pulseaudio
 
 ;tray-position = right
 ;tray-padding = 0
@@ -235,7 +235,7 @@ format-prefix = "VPN "
 exec = /home/mauro/.config/dotfiles/polybar/scripts/vpn.sh
 format = <label>
 format-font = 5
-format-margin = 1
+format-margin = 3
 label = %output%
 
 
@@ -252,7 +252,7 @@ tail = true
 exec = /home/mauro/.config/dotfiles/polybar/cava.sh
 format = <label>
 format-font = 5
-format-margin = 10
+format-margin = 2
 label = %output%
 
 [module/xkeyboard]
@@ -285,7 +285,7 @@ type = internal/i3
 format = <label-state> <label-mode>
 format-font = 1
 format-padding = 1
-format-margin = 0
+format-margin = 2
 format-background = ${colors.background2}
 index-sort = true
 wrapping-scroll = false
@@ -297,21 +297,21 @@ label-mode-padding = 1
 label-mode-foreground = ${colors.white}
 
 ; focused = Active workspace on focused monitor
-label-focused =%index% %icon%
+label-focused =%index%
 label-focused-foreground = ${colors.special-atencion}
 label-focused-padding = 1
 
 ;unfocused = Inactive workspace on any monitor
-label-unfocused =%icon%
+label-unfocused =%index%
 label-unfocused-padding = 1
 label-unfocused-margin = 1
 
 ; visible = Active workspace on unfocused monitor
-label-visible =%icon%
+label-visible =%index%
 label-visible-padding = ${colors.errorForeground}
 
 ; urgent = Workspace with urgency hint set
-label-urgent =%icon%
+label-urgent =%index%
 label-urgent-background = ${colors.errorForeground}
 label-urgent-padding = 1
 
