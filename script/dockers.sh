@@ -1,5 +1,11 @@
 #!/bin/bash
 
+# Verificar si el servicio Docker está corriendo
+if ! systemctl is-active --quiet docker; then
+    echo 
+    exit 0
+fi
+
 # Obtener el recuento de todos los contenedores en ejecución
 container_count=$(docker ps | wc -l)
 
